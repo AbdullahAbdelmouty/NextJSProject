@@ -5,7 +5,7 @@ import { gtmPageView } from "@/lib/gtm";
 import { usePathname } from 'next/navigation';
 export default function About({params}) {
   const pathName = usePathname()
-  console.log(pathName);
+  console.log(pathName,"path");
   useEffect(()=>{
     const props = {
       page_title: "about"
