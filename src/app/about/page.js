@@ -1,5 +1,4 @@
 "use client"
-import Template from "@/app/Template";
 import { useEffect } from "react";
 import { gtmPageView } from "@/lib/gtm";
 // import { usePathname } from 'next/navigation';
