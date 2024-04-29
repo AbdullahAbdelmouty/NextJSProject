@@ -1,8 +1,15 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
-
+import { gtmPageView } from "@/lib/gtm";
+import { useEffect } from "react";
 export default function Home() {
+  useEffect(()=>{
+    const props = {
+      page_title: "home"
+    }
+    gtmPageView(props)
+  },[])
   return (
     <div>
       <h1>
