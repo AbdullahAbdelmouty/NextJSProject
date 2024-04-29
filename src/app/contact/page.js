@@ -1,5 +1,5 @@
 "use client"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { gtmPageView } from "@/lib/gtm";
 import { usePathname } from 'next/navigation';
 import Link from "next/link";
@@ -14,14 +14,17 @@ export default function About({params}) {
     }
     gtmPageView(props)
   },[pathName])
+  const [inputValue,setInputValue] = useState("")
   return (
     <div>
       <h1>contact</h1>
       <form>
-        <input type="text" />
+        <input type="text" onChange={(e)=>{
+            setInputValue(e.target.value)
+        }}/>
         <button type="submit" onClick={(e)=>{
           e.preventDefault()
-          sendGTMEvent({ event: 'buttonClicked', value: e.target.value })
+          sendGTMEvent({ event: 'buttonClicked', value:  inputValue})
         }}>send</button>
       </form>
       <Link href="/" style={{color:"blue"}}>Back</Link>
