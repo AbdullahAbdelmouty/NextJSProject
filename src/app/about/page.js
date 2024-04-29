@@ -16,7 +16,9 @@ export default function About({params}) {
       <h1>About in Tasahel</h1>
       <form>
         <input type="text" />
-        <button type="submit">send</button>
+        <button type="submit" onClick={(e)=>{
+          e.preventDefault()
+        }}>send</button>
       </form>
     </div>
   );
