@@ -15,7 +15,13 @@ export default function About({params}) {
   // },[pathName])
   return (
     <div>
-      <h1>About in Tasahel</h1>
+      <h1>contact</h1>
+      <form>
+        <input type="text" />
+        <button type="submit" onClick={(e)=>{
+          e.preventDefault()
+        }}>send</button>
+      </form>
       <Link href="/" style={{color:"blue"}}>Back</Link>
     </div>
   );

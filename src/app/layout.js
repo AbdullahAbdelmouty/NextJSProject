@@ -1,6 +1,10 @@
+"use client"
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { GoogleTagManager } from '@next/third-parties/google'
+import { useEffect } from "react";
+import { gtmPageView } from "@/lib/gtm";
+import { usePathname } from 'next/navigation';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -9,6 +13,14 @@ export const metadata = {
 };
 
 export default function RootLayout({ children}) {
+  const pathName = usePathname();
+  console.log("path",pathName);
+  useEffect(()=>{
+    const props = {
+      page_title: pathName
+    }
+    gtmPageView(props)
+  },[pathName])
   return (
     <html lang="en">
       <GoogleTagManager gtmId="GTM-MT5FW7GG" />

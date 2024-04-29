@@ -16,6 +16,9 @@ export default function Home() {
       <h1>
         Welcome in <Link href="/about" style={{color:"red"}}>Tasahel</Link>
       </h1>
+      <h1>
+        contact us <Link href="/contact" style={{color:"blue"}}>contact</Link>
+      </h1>
     </div>
   );
 }
