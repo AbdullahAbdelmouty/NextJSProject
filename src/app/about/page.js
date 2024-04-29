@@ -14,6 +14,10 @@ export default function About({params}) {
   return (
     <div>
       <h1>About in Tasahel</h1>
+      <form>
+        <input type="text" />
+        <button type="submit">send</button>
+      </form>
     </div>
   );
 }
