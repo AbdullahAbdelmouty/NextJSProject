@@ -9,10 +9,9 @@ import { useRouter } from 'next/router';
 export default function About({params}) {
   const pathName = usePathname();
   console.log("path",pathName);
-  useEffect(()=>{
-    const router = useRouter();
-    router.reload()
-  },[pathName])
+  const handleReload = () => {
+    router.reload();
+  };
   const [inputValue,setInputValue] = useState("")
   return (
     <div>
@@ -21,7 +20,7 @@ export default function About({params}) {
         <input type="text"/>
         <button type="submit">send</button>
       </form>
-      <Link href="/" style={{color:"blue"}}>Back</Link>
+      <Link href="/" style={{color:"blue"}} onClick={handleReload}>Back</Link>
     </div>
   );
 }
