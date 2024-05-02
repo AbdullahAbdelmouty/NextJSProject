@@ -8,12 +8,12 @@ import { sendGTMEvent } from '@next/third-parties/google'
 export default function About({params}) {
   const pathName = usePathname();
   console.log("path",pathName);
-  useEffect(()=>{
-    const props = {
-      page_title: "contact"
-    }
-    gtmPageView(props)
-  },[pathName])
+  // useEffect(()=>{
+  //   const props = {
+  //     page_title: "contact"
+  //   }
+  //   gtmPageView(props)
+  // },[pathName])
   const [inputValue,setInputValue] = useState("")
   return (
     <div>
