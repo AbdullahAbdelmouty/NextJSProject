@@ -7,12 +7,12 @@ import Link from "next/link";
 export default function About({params}) {
   const pathName = usePathname();
   console.log("path",pathName);
-  // useEffect(()=>{
-  //   const props = {
-  //     page_title: "about"
-  //   }
-  //   gtmPageView(props)
-  // },[pathName])
+  useEffect(()=>{
+    const props = {
+      page_title: "about"
+    }
+    gtmPageView(props)
+  },[pathName])
   return (
     <div>
       <h1>About in Tasahel</h1>
